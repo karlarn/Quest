@@ -33,6 +33,14 @@ namespace Quest
                 4, 20
             );
 
+            Robe playerRobe = new Robe();
+            {
+                playerRobe.Length=130;
+                playerRobe.Colors.Add("blue");
+                playerRobe.Colors.Add("green");
+                playerRobe.Colors.Add("yellow");
+            }
+
             // "Awesomeness" is like our Adventurer's current "score"
             // A higher Awesomeness is better
 
@@ -44,7 +52,8 @@ namespace Quest
 
             // Make a new "Adventurer" object using the "Adventurer" class
             Console.Write("What's your name?");
-            Adventurer theAdventurer = new Adventurer(Console.ReadLine());
+            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), playerRobe);
+            Console.WriteLine(theAdventurer.GetDescription());
 
             // A list of challenges for the Adventurer to complete
             // Note we can use the List class here because have the line "using System.Collections.Generic;" at the top of the file.
