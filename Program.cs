@@ -43,7 +43,7 @@ namespace Quest
             int maxAwesomeness = 100;
 
             // Make a new "Adventurer" object using the "Adventurer" class
-            Console.WriteLine("What's your name?");
+            Console.Write("What's your name?");
             Adventurer theAdventurer = new Adventurer(Console.ReadLine());
 
             // A list of challenges for the Adventurer to complete
@@ -77,6 +77,31 @@ namespace Quest
             {
                 Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
             }
+            
+            Console.Write("Would you like to play again (y:n)?");
+            string playAgainAnswer = Console.ReadLine();
+            if (playAgainAnswer=="y")
+            {
+                foreach (Challenge challenge in challenges)
+            {
+                challenge.RunChallenge(theAdventurer);
+            }
+
+             if (theAdventurer.Awesomeness >= maxAwesomeness)
+            {
+                Console.WriteLine("YOU DID IT! You are truly awesome!");
+            }
+            else if (theAdventurer.Awesomeness <= minAwesomeness)
+            {
+                Console.WriteLine("Get out of my sight. Your lack of awesomeness offends me!");
+            }
+            else
+            {
+                Console.WriteLine("I guess you did...ok? ...sorta. Still, you should get out of my sight.");
+            }
+            
+            }
+            else{}
         }
     }
 }
