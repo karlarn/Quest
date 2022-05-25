@@ -41,6 +41,11 @@ namespace Quest
                 playerRobe.Colors.Add("yellow");
             }
 
+            Hat playerHat = new Hat();
+            {
+                 playerHat.ShininessLevel = 5;
+            }
+
             // "Awesomeness" is like our Adventurer's current "score"
             // A higher Awesomeness is better
 
@@ -52,7 +57,7 @@ namespace Quest
 
             // Make a new "Adventurer" object using the "Adventurer" class
             Console.Write("What's your name?");
-            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), playerRobe);
+            Adventurer theAdventurer = new Adventurer(Console.ReadLine(), playerRobe, playerHat);
             Console.WriteLine(theAdventurer.GetDescription());
 
             // A list of challenges for the Adventurer to complete
